@@ -43,3 +43,10 @@ for items in total_list:
 fp.write('\n')
 fp.write('}')
 fp.close()
+
+# Execute the DOT command in the terminal to create the dot graph image "output.png"
+import subprocess
+
+bashCommand = "dot -Tpng input.gv -o output.png"
+process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
+output, error = process.communicate()

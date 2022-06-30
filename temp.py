@@ -35,18 +35,20 @@ fp.write('\n')
 tlentry = 0
 for item in total_list:
     if item <= team_list[tlentry]:
+        #continue
         #print("teamlist element:", team_list[0])
         #print("item is less or equal than team_list element")
         #print("item", item)
-        print("node_1:", item, "node_2:", team_list[tlentry])
+        print("If", "node_1:", item, "node_2:", team_list[tlentry])
+        #fp.writelines(str(item) + " -- " + str(team_list[tlentry]) +'\n')
     else:
         #print("teamlist element:", team_list[0])
         #print("item is greater than team_list element")
         #print("item", item)
-        print("node_1:", item, "node_2:", team_list[tlentry])
+        print("Else", "node_1:", item, "node_2:", team_list[tlentry])
     if tlentry < len(team_list)-1:
         tlentry = tlentry + 1
-        print(tlentry)
+    print(tlentry)
 
 # !! problem: tlentry is counted up to 5 with first four 1 item in total_list
 # !! tlentry needs to reset

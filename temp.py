@@ -1,4 +1,4 @@
-team_size = 3
+team_size = 5
 iteration = 1
 
 total_list_count = 0
@@ -6,9 +6,10 @@ total_list = []
 team_list = []
 
 print("team_size:", team_size)
-# Create list with elements from team_size in reverse order (range syntax)
+
+# Create list with elements from team_size
 # e.g. team_size=4 has list (4, 3, 2, 1)
-for i in range(team_size, 0, -1):
+for i in range(1, team_size+1):
     team_list.append(int(i))
 print("team list :", team_list)
 
@@ -29,18 +30,44 @@ fp.write('graph MyGraph {')
 fp.write('\n')
 
 # Content from total_list
-for items in total_list:
-    fp.writelines(str(items) + " -- " + "2" +'\n')
+
+# helper variable to increase team_list position
+tlentry = 0
+for item in total_list:
+    if item <= team_list[tlentry]:
+        #print("teamlist element:", team_list[0])
+        #print("item is less or equal than team_list element")
+        #print("item", item)
+        print("node_1:", item, "node_2:", team_list[tlentry])
+    else:
+        #print("teamlist element:", team_list[0])
+        #print("item is greater than team_list element")
+        #print("item", item)
+        print("node_1:", item, "node_2:", team_list[tlentry])
+    if tlentry < len(team_list)-1:
+        tlentry = tlentry + 1
+        print(tlentry)
+
+# !! problem: tlentry is counted up to 5 with first four 1 item in total_list
+# !! tlentry needs to reset
+# !! tlentry X needs to iterate to ALL total_list entries, then reset
+
+""" today i learned / observed myself:
+running the print output helped me visualize my thought flow.
+Also having an actual example written in excel (on paper) helped.
+In excel was the mathematical solution/example
+"""
+
+#    fp.writelines(str(item) + " -- " + "2" +'\n')
 
 # replace 2 with connecting teamnumber thingy
 
 """" Idea
 for each list_entry iterate through the team_list entries
-Check if list_entry is greater or equal with the team_list entry, then skip
+Check if list_entry is lesser or equal with the team_list entry, then skip
 
 for each... iteration durch new_list!
     if new_list_item > team_list
-        doch nicht reversed!!
         1, 1, 2      =<   1, 2, 3
         fp.writelines(str(items) + " -- " + team_list_item" +'\n') 
         
@@ -52,7 +79,6 @@ for each... iteration durch new_list!
         1 => 3
         2 => 3
 """
-
 
 # End of content from total_list
 

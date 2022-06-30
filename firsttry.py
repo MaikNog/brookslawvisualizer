@@ -1,4 +1,4 @@
-team_size = 3
+team_size = 6
 iteration = 1
 
 total_list_count = 0

@@ -10,6 +10,7 @@ iteration = 1
 total_list = []
 team_list = []
 
+# TODO Make the debug/print statements enabled by replacing text? #print for print ?
 #print("team_size:", team_size)
 
 # Create list with elements from team_size

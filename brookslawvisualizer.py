@@ -2,8 +2,8 @@
 # TODO Explain all print statements as debug infos
 # TODO Write comment to each block and explain what it does
 # TODO Write loading bar for higher team size rendering time in terminal?
-# TODO Make the Graph nicer looking for higher team size, make it Mandala style?
 # TODO Explain why i wrote the graph (e.g. no variables can be used directly in dot notation)
+# TODO Make the user chose rendering algorithm (default is circo)
 
 team_size = 10
 iteration = 1

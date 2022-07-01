@@ -4,8 +4,12 @@
 # TODO Write loading bar for higher team size rendering time in terminal?
 # TODO Explain why i wrote the graph (e.g. no variables can be used directly in dot notation)
 # TODO Make the user chose rendering algorithm (default is circo)
+# TODO Why / how did I choose Python and GraphViz/dot? Research, article links, little programming knowledge etc.
+# TODO Make a warning if user choses large team size. Its not forecastable how long the rendering will take.
+# TODO Team size 100 takes 10 minutes to render? 19:34
+# TODO Make Readme also with Graph example of different algos? Keep 100 image
 
-team_size = 10
+team_size = 100
 iteration = 1
 
 total_list = []

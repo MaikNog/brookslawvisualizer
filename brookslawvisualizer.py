@@ -3,8 +3,9 @@
 # TODO Write comment to each block and explain what it does
 # TODO Write loading bar for higher team size rendering time in terminal?
 # TODO Make the Graph nicer looking for higher team size, make it Mandala style?
+# TODO Explain why i wrote the graph (e.g. no variables can be used directly in dot notation)
 
-team_size = 5
+team_size = 10
 iteration = 1
 
 total_list = []
@@ -66,6 +67,6 @@ fp.close()
 import subprocess
 
 # TODO Make the gv and png filenames as variables
-bashCommand = "dot -Tpng brookslawvisualizer.gv -o brookslawvisualizer.png"
+bashCommand = "circo -Tpng brookslawvisualizer.gv -o brookslawvisualizer.png"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()

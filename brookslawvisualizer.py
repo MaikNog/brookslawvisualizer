@@ -6,10 +6,10 @@
 # TODO Make the user chose rendering algorithm (default is circo)
 # TODO Why / how did I choose Python and GraphViz/dot? Research, article links, little programming knowledge etc.
 # TODO Make a warning if user choses large team size. Its not forecastable how long the rendering will take.
-# TODO Team size 100 takes 10 minutes to render? 19:34
+# TODO Team size 100 takes >10 minutes to render? Team Size 30 took 10 seconds; team size 40 took 2 min
 # TODO Make Readme also with Graph example of different algos? Keep 100 image
 
-team_size = 100
+team_size = 40
 iteration = 1
 
 total_list = []

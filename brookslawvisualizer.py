@@ -1,5 +1,6 @@
-# TODO explain all print statements as debug infos
-# Write comment to each block and explain what it does
+# TODO Explain all print statements as debug infos
+# TODO Write comment to each block and explain what it does
+# TODO Write loading bar for higher team size rendering time in terminal?
 
 team_size = 5
 iteration = 1
@@ -82,10 +83,10 @@ fp.close()
 # Execute the DOT command in the terminal to create the dot graph image "output.png"
 # Careful! The drawing of the image takes longer, the higher the team size.
 
-#TODO When making it a progam, make it user option to disable drawing
+# TODO When making it a progam, make it user option to disable drawing
 import subprocess
 
-#TODO Make the gv and png filenames as variables
+# TODO Make the gv and png filenames as variables
 bashCommand = "dot -Tpng brookslawvisualizer.gv -o brookslawvisualizer.png"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)
 output, error = process.communicate()

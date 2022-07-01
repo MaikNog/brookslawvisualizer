@@ -1,6 +1,8 @@
+# TODO Write Readme with purpose and instrcutions
 # TODO Explain all print statements as debug infos
 # TODO Write comment to each block and explain what it does
 # TODO Write loading bar for higher team size rendering time in terminal?
+# TODO Make the Graph nicer looking for higher team size, make it Mandala style?
 
 team_size = 5
 iteration = 1

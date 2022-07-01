@@ -49,30 +49,6 @@ for item in team_list:
             #print("Was lesser", item, item2)
             fp.writelines(str(item) + " -- " + str(item2) +'\n')
 
-""" today i learned / observed myself:
-running the print output helped me visualize my thought flow.
-Also having an actual example written in excel (on paper) helped.
-In excel was the mathematical solution/example
-"""
-
-""""  Idea
-for each list_entry iterate through the team_list entries
-Check if list_entry is lesser or equal with the team_list entry, then skip
-
-for each... iteration durch new_list!
-    if new_list_item > team_list
-        1, 1, 2      =<   1, 2, 3
-        fp.writelines(str(items) + " -- " + team_list_item" +'\n') 
-        
-        teamsize 3
-        team list 1,2,3
-        new_list 1,1,2
-        
-        1 => 2
-        1 => 3
-        2 => 3
-"""
-
 # End of content from team_list
 
 # Closing bracket in last line of file

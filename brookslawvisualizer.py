@@ -1,4 +1,4 @@
-# TODO Write Readme with purpose and instrcutions
+# TODO Write Readme with purpose and instructions
 # TODO Explain all print statements as debug infos
 # TODO Write comment to each block and explain what it does
 # TODO Write loading bar for higher team size rendering time in terminal?
@@ -15,7 +15,23 @@
 # TODO Write a ReWrite Tech blog post
 # TODO Add team size + comm lines in image
 
-team_size = 40
+# Import section
+import re
+import subprocess
+
+# User Input dialogue
+# With validation check if input is an integer
+IsNotAnInteger = True
+input_value = None
+while IsNotAnInteger:
+    input_value = input("Please input a number: ")
+    match_val = re.match("[-+]?\\d+$", input_value)
+    if match_val is None:
+        print("Please enter a valid integer.")
+    else:
+        IsNotAnInteger = False
+
+team_size = int(input_value)
 iteration = 1
 
 total_list = []
@@ -74,8 +90,6 @@ fp.close()
 # Careful! The drawing of the image takes longer, the higher the team size.
 
 # TODO When making it a progam, make it user option to disable drawing
-import subprocess
-
 # TODO Make the gv and png filenames as variables
 bashCommand = "circo -Tpng brookslawvisualizer.gv -o brookslawvisualizer.png"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)

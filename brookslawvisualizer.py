@@ -19,23 +19,30 @@
 import re
 import subprocess
 
-# User Input dialogue
-# With validation check if input is an integer
-IsNotAnInteger = True
-input_value = None
-while IsNotAnInteger:
-    input_value = input("Please input a number: ")
-    match_val = re.match("[-+]?\\d+$", input_value)
-    if match_val is None:
-        print("Please enter a valid integer.")
-    else:
-        IsNotAnInteger = False
-
-team_size = int(input_value)
+# Variable declaration block
+team_size = 2
 iteration = 1
-
 total_list = []
 team_list = []
+
+# User Input dialogue
+# With validation check if input is an integer
+# Made it a def block
+def user_input_dialogue():
+    IsNotAnInteger = True
+    input_value = None
+    while IsNotAnInteger:
+        input_value = input("Please input a team size: ")
+        match_val = re.match("[-+]?\\d+$", input_value)
+        if match_val is None:
+            print("Please enter a valid integer.")
+        else:
+            IsNotAnInteger = False
+    return int(input_value)
+
+# Feeding the input from def function to variable
+team_size = user_input_dialogue()
+
 
 # TODO Make the debug/print statements enabled by replacing text? #print for print ?
 #print("team_size:", team_size)

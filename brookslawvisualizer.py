@@ -9,7 +9,7 @@
 # TODO Team size 100 takes >10 minutes to render? Team Size 30 took 10 seconds; team size 40 took 2 min
 # TODO Make Readme also with Graph example of different algos? Keep 100 image
 # TODO How to test it?
-# TODO Write down the software requirements (GraphViz, Python3, pytest)
+# TODO Write down the software requirements (GraphViz, Python3)
 # TODO Ask for input number… warning when bigger than 40. If Yes, than go with it
 # TODO Write a ReWrite Tech blog post
 # TODO Add team size + comm lines in image

@@ -1,0 +1,5 @@
+# ignore ALL .png files
+*.png
+
+# Ignore .idea IntelliJ IDE directory
+.idea/

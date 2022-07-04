@@ -27,6 +27,7 @@ team_list = []
 # User Input dialogue
 # With validation check if input is an integer
 # Made it a def block
+# TODO Need an exit break to avoid endless loop in unit test
 def user_input_dialogue():
     IsNotAnInteger = True
     input_value = None

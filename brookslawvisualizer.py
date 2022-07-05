@@ -28,7 +28,7 @@ team_list = []
 # With validation check if input is an integer
 # Made it a def block
 # TODO Need an exit break to avoid endless loop in unit test
-def user_input_dialogue():
+def user_input_team_size():
     IsNotAnInteger = True
     input_value = None
     while IsNotAnInteger:
@@ -40,8 +40,29 @@ def user_input_dialogue():
             IsNotAnInteger = False
     return int(input_value)
 
+# Create option to enable print output
+# by changing #print to print
+# TODO Need to replace '#print' with variable 'p = "#print"' and ' p = "print"'
+# TODO Avid endless loop, make a break
+# TODO Make regex for Yes or yes input
+print_value = ""
+def user_input_print_debug():
+    IsNotYes = True
+    input_value = None
+    while IsNotYes:
+        input_value = input("Do you want to see print statements? (Yes/No): ")
+        match_val = re.match("Yes", input_value)
+        if match_val is None:
+            print("Please enter Yes or No.")
+        else:
+            IsNotYes = False
+    return print_value
+
+# TODO Need to make the print variable
+# user_input_print_debug()
+
 # Feeding the input from def function to variable
-team_size = user_input_dialogue()
+team_size = user_input_team_size()
 
 
 # TODO Make the debug/print statements enabled by replacing text? #print for print ?

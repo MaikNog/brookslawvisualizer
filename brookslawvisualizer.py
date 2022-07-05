@@ -1,6 +1,5 @@
 # TODO Write Readme with purpose and instructions
 # TODO Explain all print statements as debug infos
-# TODO Write comment to each block and explain what it does
 # TODO Write loading bar for higher team size rendering time in terminal?
 # TODO Explain why i wrote the graph (e.g. no variables can be used directly in dot notation)
 # TODO Make the user chose rendering algorithm (default is circo)
@@ -14,9 +13,6 @@
 # TODO Write a ReWrite Tech blog post
 # TODO Add team size + comm lines in image
 
-# Import section
-import re
-import subprocess
 
 # Variable declaration block
 team_size = 2
@@ -40,40 +36,14 @@ def user_input_team_size():
             IsNotAnInteger = False
     return int(input_value)
 
-# Create option to enable print output
-# by changing #print to print
-# TODO Need to replace '#print' with variable 'p = "#print"' and ' p = "print"'
-# TODO Avid endless loop, make a break
-# TODO Make regex for Yes or yes input
-print_value = ""
-def user_input_print_debug():
-    IsNotYes = True
-    input_value = None
-    while IsNotYes:
-        input_value = input("Do you want to see print statements? (Yes/No): ")
-        match_val = re.match("Yes", input_value)
-        if match_val is None:
-            print("Please enter Yes or No.")
-        else:
-            IsNotYes = False
-    return print_value
-
-# TODO Need to make the print variable
-# user_input_print_debug()
-
 # Feeding the input from def function to variable
 team_size = user_input_team_size()
-
-
-# TODO Make the debug/print statements enabled by replacing text? #print for print ?
-#print("team_size:", team_size)
 
 # Create list with elements from team_size, e.g. team_size=4 has list (1, 2, 3, 4)
 # Need to set team_size+1 since <list> count start with 0
 def fill_team_list():
     for i in range(1, team_size+1):
         team_list.append(int(i))
-    #print("team list :", team_list)
     return team_list
 
 fill_team_list()
@@ -91,7 +61,6 @@ fp.write('\n')
 
 # Duplicate created team_list to iterate through
 team_list_duplicate = team_list
-#print("team_list_duplicate :", team_list_duplicate)
 
 # Create the graph entries for the GV file with content from team_list
 # We iterate and compare the 1st list (team_list) with all entries in 2nd list (team_list_duplicate)
@@ -110,14 +79,10 @@ team_list_duplicate = team_list
 # 3 >= 3 // skip
 
 for item in team_list:
-    #print("item", item)
     for item2 in team_list_duplicate:
-        #print("item2", item2)
         if item >= item2:
             pass
-            #print("Was equal or greater", item, item2)
         else:
-            #print("Was lesser", item, item2)
             fp.writelines(str(item) + " -- " + str(item2) +'\n')
 
 # End of content from team_list

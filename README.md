@@ -49,6 +49,10 @@ Raw thoughts; need to refine them later:
 - Decided to forget tests for now and work to release it.
 - Here we are.
 
+## Installation
+
+PYTHON3 - https://www.python.org/downloads/
+GRAPHVIZ - https://www.graphviz.org/download/
 
 
 ## Team size of 40 and the respective lines of communication

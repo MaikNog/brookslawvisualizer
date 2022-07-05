@@ -57,29 +57,7 @@ def fill_team_list():
 
 fill_team_list()
 
-# Iterate and build the total_list, which contains all the nodes
-# ( "-> x" is not part of the list), its the connecting nodes
-#
-# Example:
-# team_size = 3
-# iteration = 1
-# new_list :
-# 1 -> 2
-# 1 -> 3
-# iteration = 2
-# new_list :
-# 2 -> 3
-# total_list : 1 1 2
-"""def fill_total_list():
-    while iteration < team_size:
-        repetition = team_size - iteration
-        new_list = [iteration] * repetition
-        total_list += new_list
-        iteration += 1
-    #print("total_list :", total_list)
-    return total_list()
-"""
-# TODO TIL that i had unused code, which i didnt need in the end.
+# TODO TIL that i had unused code (total_list function), which i didnt need in the end.
 # Maybe I worked on it one day and by next day I had a different approach
 # Unused code was working, but not called or needed
 

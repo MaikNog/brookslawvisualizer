@@ -3,3 +3,6 @@
 
 # Ignore .idea IntelliJ IDE directory
 .idea/
+
+# Ignore pycache directory
+__pycache__/

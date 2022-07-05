@@ -47,34 +47,69 @@ team_size = user_input_dialogue()
 # TODO Make the debug/print statements enabled by replacing text? #print for print ?
 #print("team_size:", team_size)
 
-# Create list with elements from team_size
-# e.g. team_size=4 has list (1, 2, 3, 4)
+# Create list with elements from team_size, e.g. team_size=4 has list (1, 2, 3, 4)
+# Need to set team_size+1 since <list> count start with 0
+def fill_team_list():
+    for i in range(1, team_size+1):
+        team_list.append(int(i))
+    #print("team list :", team_list)
+    return team_list
 
-# Need to set team_size+1 since list count start with 0
-for i in range(1, team_size+1):
-    team_list.append(int(i))
-#print("team list :", team_list)
+fill_team_list()
 
-while iteration < team_size:
-    repetition = team_size - iteration
-    new_list = [iteration] * repetition
-    total_list += new_list
-    iteration += 1
-#print("total_list :", total_list)
+# Iterate and build the total_list, which contains all the nodes
+# ( "-> x" is not part of the list), its the connecting nodes
+#
+# Example:
+# team_size = 3
+# iteration = 1
+# new_list :
+# 1 -> 2
+# 1 -> 3
+# iteration = 2
+# new_list :
+# 2 -> 3
+# total_list : 1 1 2
+"""def fill_total_list():
+    while iteration < team_size:
+        repetition = team_size - iteration
+        new_list = [iteration] * repetition
+        total_list += new_list
+        iteration += 1
+    #print("total_list :", total_list)
+    return total_list()
+"""
+# TODO TIL that i had unused code, which i didnt need in the end.
+# Maybe I worked on it one day and by next day I had a different approach
+# Unused code was working, but not called or needed
+
+# Create a GraphViz GV file in current directory
+fp = open('brookslawvisualizer.gv', 'w')
+
+# Opening bracket of file and graph name
+fp.write('graph Brookslawvisualizer {')
+fp.write('\n')
 
 # Duplicate created team_list to iterate through
 team_list_duplicate = team_list
 #print("team_list_duplicate :", team_list_duplicate)
-#print("=======================")
 
-# create a GraphViz GV file from the total_list in current directory
-fp = open('brookslawvisualizer.gv', 'w')
+# Create the graph entries for the GV file with content from team_list
+# We iterate and compare the 1st list (team_list) with all entries in 2nd list (team_list_duplicate)
+# If it is lesser, we create an entry for the Graphviz GV file
+#
+# Example:
+# team_size=3 has list (1, 2, 3) & team_list_duplicate has list (1, 2, 3)
+# 1 >= 1 // skip
+# 1 >= 2 // write: 1 -- 2
+# 1 >= 3 // write: 1 -- 3
+# 2 >= 1 // skip
+# 2 >= 2 // skip
+# 2 >= 3 // write: 2 -- 3
+# 3 >= 1 // skip
+# 3 >= 2 // skip
+# 3 >= 3 // skip
 
-# Opening definition and bracket of file
-fp.write('graph MyGraph {')
-fp.write('\n')
-
-# Content from team_list
 for item in team_list:
     #print("item", item)
     for item2 in team_list_duplicate:
@@ -88,7 +123,7 @@ for item in team_list:
 
 # End of content from team_list
 
-# Closing bracket in last line of file
+# Closing bracket in last line of file and closing the file
 fp.write('\n')
 fp.write('}')
 fp.close()
@@ -96,7 +131,7 @@ fp.close()
 # Execute the DOT command in the terminal to create the dot graph image "output.png"
 # Careful! The drawing of the image takes longer, the higher the team size.
 
-# TODO When making it a progam, make it user option to disable drawing
+# TODO When making it a program, make it user option to disable drawing
 # TODO Make the gv and png filenames as variables
 bashCommand = "circo -Tpng brookslawvisualizer.gv -o brookslawvisualizer.png"
 process = subprocess.Popen(bashCommand.split(), stdout=subprocess.PIPE)

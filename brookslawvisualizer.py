@@ -1,20 +1,21 @@
 # TODO Write Readme with purpose and instructions
-# TODO Explain all print statements as debug infos
 # TODO Write loading bar for higher team size rendering time in terminal?
 # TODO Explain why i wrote the graph (e.g. no variables can be used directly in dot notation)
 # TODO Make the user chose rendering algorithm (default is circo)
 # TODO Why / how did I choose Python and GraphViz/dot? Research, article links, little programming knowledge etc.
-# TODO Make a warning if user choses large team size. Its not forecastable how long the rendering will take.
+# TODO Ask for input number… warning when bigger than 40. If Yes, than go with it
+# TODO Make a warning if user chooses large team size. Its not forecastable how long the rendering will take.
 # TODO Team size 100 takes >10 minutes to render? Team Size 30 took 10 seconds; team size 40 took 2 min
-# TODO Make Readme also with Graph example of different algos? Keep 100 image
+# TODO Make Readme also with Graph example of different algos? Keep 40 image
 # TODO How to test it?
 # TODO Write down the software requirements (GraphViz, Python3)
-# TODO Ask for input number… warning when bigger than 40. If Yes, than go with it
 # TODO Write a ReWrite Tech blog post
 # TODO Add team size + comm lines in image
 
-
 # Variable declaration block
+import re
+import subprocess
+
 team_size = 2
 iteration = 1
 total_list = []
@@ -92,7 +93,7 @@ fp.write('\n')
 fp.write('}')
 fp.close()
 
-# Execute the DOT command in the terminal to create the dot graph image "output.png"
+# Execute the GraphViz command in the terminal to create the graph image "brookslawvisualizer.png"
 # Careful! The drawing of the image takes longer, the higher the team size.
 
 # TODO When making it a program, make it user option to disable drawing

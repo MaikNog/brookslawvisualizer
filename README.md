@@ -21,8 +21,8 @@ So I decided to program one myself.
 As a professional tester, coding was never my strong suit and coding tutorials without any practical need never kept me for long.
 
 
-This is my learning journey.
-//Raw thoughts; need to refine them later:
+## This is my learning journey.
+Raw thoughts; need to refine them later:
 - Starting reading up on the origin, found the formula to calculate the number of relationships ( n*(n-1)/2 ).
 - Researched in tools, which draw nodes and edges.
 - Read up on Graph Theory
@@ -30,6 +30,24 @@ This is my learning journey.
 - Started to setup my coding environment (IntelliJ IDEA), installed python3
 - Found GraphViz as a drawing tool
 - Needed to create the graph file needed for drawing from scratch; no variable usage in dot language (˜GraphViz)
+- Used debugging ("print" statements), loops, decisions and file operations
+- Main python file creates the graph file, which is then drawn by GraphViz.
+- After first working prototype experimented with the drawing algorithm, went from DOT to CIRCO.
+- Used code TODO to remind me of things.
+- Used comments to explain my code; had moments, where I didn't understand, what I wrote a day before.
+- Generated a TON of new possible feature ideas.
+
+- Tried to write tests.
+- Need to simulate user (commandline) input in tests.
+- Running test with "pytest" fails. 
+- Running test with "pytest -s" works, but user needs to manually input in every test.
+- Experimented with pytest, unittest, monkeypatch.
+- Still TOTALLY STUCK after >4 days.
+- Reached out in slack channels, got some help, but no solution.
+- Current working hypothesis: My environment might be weird.
+
+- Decided to forget tests for now and work to release it.
+- Here we are.
 
 
 

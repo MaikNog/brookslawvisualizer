@@ -1,15 +1,19 @@
+# TODO BLOG Write a ReWrite Tech blog post
+# TODO BLOG Explain why i wrote the graph (e.g. no variables can be used directly in dot notation)
+# TODO BLOG Why / how did I choose Python and GraphViz/dot? Research, article links, little programming knowledge etc.
+# TODO BLOG TIL that i had unused code (total_list function), which i didnt need in the end.
+# TODO BLOG Maybe I worked on it one day and by next day I had a different approach
+# TODO BLOG Unused code was working, but not called or needed
+
 # TODO Write Readme with purpose and instructions
+# TODO Make Readme also with Graph example of different algos? Keep 40 image
+# TODO Write down the software requirements (GraphViz, Python3)
 # TODO Write loading bar for higher team size rendering time in terminal?
-# TODO Explain why i wrote the graph (e.g. no variables can be used directly in dot notation)
 # TODO Make the user chose rendering algorithm (default is circo)
-# TODO Why / how did I choose Python and GraphViz/dot? Research, article links, little programming knowledge etc.
 # TODO Ask for input number… warning when bigger than 40. If Yes, than go with it
 # TODO Make a warning if user chooses large team size. Its not forecastable how long the rendering will take.
 # TODO Team size 100 takes >10 minutes to render? Team Size 30 took 10 seconds; team size 40 took 2 min
-# TODO Make Readme also with Graph example of different algos? Keep 40 image
 # TODO How to test it?
-# TODO Write down the software requirements (GraphViz, Python3)
-# TODO Write a ReWrite Tech blog post
 # TODO Add team size + comm lines in image
 
 # Variable declaration block
@@ -48,10 +52,6 @@ def fill_team_list():
     return team_list
 
 fill_team_list()
-
-# TODO TIL that i had unused code (total_list function), which i didnt need in the end.
-# Maybe I worked on it one day and by next day I had a different approach
-# Unused code was working, but not called or needed
 
 # Create a GraphViz GV file in current directory
 fp = open('brookslawvisualizer.gv', 'w')

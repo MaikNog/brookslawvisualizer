@@ -1,6 +1,11 @@
 # Brooks' Law visualizer
 This script draws an image with the lines of communication between a given amount of elements.
 
+## Warning
+***Team sizes greater than 40 takes a huge amount of time, depending on CPU power.***
+
+***Team size 40 took around 10 minutes on a Macbook 2014 model.***
+
 ## History
 The history of "Brook's law is described on Wikipedia in detail. The shortform:
 

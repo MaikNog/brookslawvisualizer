@@ -25,6 +25,26 @@ iteration = 1
 total_list = []
 team_list = []
 
+### New idea to seperate the old 'def user_input_team_size():' block
+# 1. Get the user input via cmd line as one function: get_user_input
+# 2. Feed the user input into a second function: is_user_input_integer
+# Stuck: How to reroute from 2nd function to 1st input function, when no integer?
+
+def get_user_input():
+    input_value = input("New Please input a team size: ")
+    return input_value
+
+def is_user_input_integer(input_value):
+    match_val = re.match("[-+]?\\d+$", input_value)
+
+    if match_val is None:
+        print("Please enter a valid integer.")
+        get_user_input()
+
+
+    return int(input_value)
+
+
 # User Input dialogue
 # With validation check if input is an integer
 # Made it a def block
@@ -33,16 +53,24 @@ def user_input_team_size():
     IsNotAnInteger = True
     input_value = None
     while IsNotAnInteger:
+        # Also refactor line 37 as function.
         input_value = input("Please input a team size: ")
+        # Refactor match function. Plus better function name!
         match_val = re.match("[-+]?\\d+$", input_value)
+        #
         if match_val is None:
             print("Please enter a valid integer.")
         else:
             IsNotAnInteger = False
+    # unit test to check the return value
     return int(input_value)
+    #
+# IDEA: Input function dedicated writing as a function. Then input that return value to the 'user_input_team_size'
+# is_user_input_integer ?
 
 # Feeding the input from def function to variable
-team_size = user_input_team_size()
+# Old variable way: team_size = user_input_team_size()
+team_size = is_user_input_integer(get_user_input())
 
 # Create list with elements from team_size, e.g. team_size=4 has list (1, 2, 3, 4)
 # Need to set team_size+1 since <list> count start with 0

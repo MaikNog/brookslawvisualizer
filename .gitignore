@@ -1,6 +1,10 @@
 # ignore ALL .png files
 *.png
 
+# ignore Macintosh DS_Store files
+.DS_Store
+
+
 # Ignore .idea IntelliJ IDE directory
 .idea/
 
